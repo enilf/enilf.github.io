@@ -14,7 +14,25 @@ html {
 }
 
 body {
+    background-color: black;
+    padding: 0.2rem;
+}
 
+button {
+    width: 24.25%;
+    font-size: 5rem;
+    border-radius: 0.5rem;
+    height: 8rem;
+    color: black;
+    background-color: white;
+}
+
+#add, #sub, #mul, #div, #clear, #enter, #comma{
+    color: #00BFFF;
+}
+
+#clear {
+    width: 99%;
 }
 
 main {
@@ -22,8 +40,8 @@ main {
 }
 
 main input{
-    width: 100%;
-    font-size: 3.5rem;
+    width: 99%;
+    font-size: 5rem;
     margin-bottom:10px;
     background-color: black;
     color: green;
@@ -38,9 +56,9 @@ main section#keyBoard {
     /** Grid eller liknade */
 }
 
-@media (max-width: 767px) {
+@media (min-width: 767px) {
     body {
-
+        width: 40rem;
     }
 
     main {
