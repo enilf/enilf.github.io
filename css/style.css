@@ -41,7 +41,8 @@ main {
 
 main input{
     width: 99%;
-    font-size: 5rem;
+    height: 7rem;
+    font-size: 3rem;
     margin-bottom:10px;
     background-color: black;
     color: green;

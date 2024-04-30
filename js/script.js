@@ -27,11 +27,11 @@ function buttonClick(e) {
     if (btn.substring(0, 1) === 'b') {
         let digit = btn.substring(1, 2); // plockar ut siffran från id:et
         addDigit(digit);
-    } 
+    }
     else if (btn === 'clear') {
         clearLCD();
         whiteBackground();
-    } 
+    }
     else if (btn === 'enter') {
         calculate();
         whiteBackground();
@@ -56,11 +56,11 @@ function addDigit(digit) {
  * Lägger till decimaltecken
  */
 function addComma(comma) {
-   
-    if(lcd.value.includes('.')){
+
+    if (lcd.value.includes('.')) {
         console.log('1')
-    } 
-    else{
+    }
+    else {
         lcd.value = lcd.value + comma;
     }
 
@@ -70,7 +70,7 @@ function addComma(comma) {
  * Sparar operator.
  * +, -, *, /
  */
-function setOperator(operator, siffra) { 
+function setOperator(operator, siffra) {
     arithmetic = operator;
     memory = siffra;
     clearLCD();
@@ -80,7 +80,7 @@ function setOperator(operator, siffra) {
  * Beräknar och visar resultatet på displayen.
  */
 function calculate() {
-    
+
     let decAmount = 0;
     console.log(memory);
 
@@ -95,16 +95,16 @@ function calculate() {
     console.log(memory);
 
 
-    if(arithmetic === 'add'){
+    if (arithmetic === 'add') {
         lcd.value = (+memory + +lcd.value) / Math.pow(10, decAmount);
-    }   
-    else if(arithmetic === 'sub'){
+    }
+    else if (arithmetic === 'sub') {
         lcd.value = (memory - lcd.value) / Math.pow(10, decAmount);
     }
-    else if(arithmetic === 'mul'){
+    else if (arithmetic === 'mul') {
         lcd.value = (memory * lcd.value) / Math.pow(10, 2 * decAmount);
     }
-    else if(arithmetic === 'div'){
+    else if (arithmetic === 'div') {
         lcd.value = memory / lcd.value;
     }
 
@@ -123,24 +123,24 @@ function memClear() {
     clearLCD();
 }
 
-function backGround(operator){
+function backGround(operator) {
     whiteBackground();
 
-    if(operator === "add") {
+    if (operator === "add") {
         document.getElementById("add").style.backgroundColor = "lightgray"
     }
-    else if(operator === "sub") {
+    else if (operator === "sub") {
         document.getElementById("sub").style.backgroundColor = "lightgray"
     }
-    else if(operator === "mul") {
+    else if (operator === "mul") {
         document.getElementById("mul").style.backgroundColor = "lightgray"
     }
-    else if(operator === "div") {
+    else if (operator === "div") {
         document.getElementById("div").style.backgroundColor = "lightgray"
     }
 }
 
-function whiteBackground(){
+function whiteBackground() {
     document.getElementById("add").style.backgroundColor = "white"
     document.getElementById("sub").style.backgroundColor = "white"
     document.getElementById("mul").style.backgroundColor = "white"
